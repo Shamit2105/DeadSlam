@@ -1,0 +1,127 @@
+%YAML:1.0
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters for Android Phone
+# Update these values with your phone's camera calibration
+#--------------------------------------------------------------------------------------------
+
+# Camera calibration matrix (intrinsic parameters)
+# fx, fy: focal lengths in pixels
+# cx, cy: principal point (usually near image center)
+Camera.fx: 458.654
+Camera.fy: 457.296
+Camera.cx: 320.0
+Camera.cy: 240.0
+
+# Distortion coefficients (k1, k2, p1, p2, k3)
+# k1, k2, k3: radial distortion
+# p1, p2: tangential distortion
+Camera.k1: -0.28340811
+Camera.k2: 0.07395907
+Camera.p1: 0.00019359
+Camera.p2: 1.76187114e-05
+Camera.k3: 0.0
+
+# Image resolution
+Camera.width: 640
+Camera.height: 480
+
+# Camera frames per second
+Camera.fps: 30.0
+
+# Camera color order (0: BGR, 1: RGB)
+Camera.RGB: 1
+
+#--------------------------------------------------------------------------------------------
+# ORB Extractor Parameters
+#--------------------------------------------------------------------------------------------
+
+# Number of features per image
+ORBextractor.nFeatures: 1000
+
+# Scale factor between pyramid levels (default: 1.2)
+ORBextractor.scaleFactor: 1.2
+
+# Number of pyramid levels (default: 8)
+ORBextractor.nLevels: 8
+
+# FAST threshold for initial feature detection
+# Decrease for more features, increase for fewer features
+ORBextractor.iniThFAST: 20
+
+# Minimum FAST threshold if initial fails
+ORBextractor.minThFAST: 7
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters (if using visualization)
+#--------------------------------------------------------------------------------------------
+
+# Keyframe visualization size
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1
+
+# Graph visualization
+Viewer.GraphLineWidth: 0.9
+
+# Point cloud visualization
+Viewer.PointSize: 2
+
+# Camera visualization
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3
+
+# Viewpoint configuration
+Viewer.ViewpointX: 0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -1.8
+Viewer.ViewpointF: 500
+
+#--------------------------------------------------------------------------------------------
+# Tracking Parameters
+#--------------------------------------------------------------------------------------------
+
+# Thresholds for tracking quality
+# Good: > 50 matched features
+# Lost: < 15 matched features
+Tracking.thRefRatio: 0.9
+
+#--------------------------------------------------------------------------------------------
+# Mapping Parameters
+#--------------------------------------------------------------------------------------------
+
+# Local mapping keyframe culling
+LocalMapping.Culling: true
+
+#--------------------------------------------------------------------------------------------
+# Loop Closing Parameters
+#--------------------------------------------------------------------------------------------
+
+# Enable loop closure detection
+LoopClosing.Enabled: true
+
+# Minimum score for loop detection
+LoopClosing.minScore: 0.75
+
+#--------------------------------------------------------------------------------------------
+# Initialization Parameters
+#--------------------------------------------------------------------------------------------
+
+# Number of iterations for RANSAC in initialization
+Initializer.ransacIterations: 200
+
+# Minimum parallax for initialization (degrees)
+Initializer.minParallax: 1.0
+
+#--------------------------------------------------------------------------------------------
+# Performance Tuning for Mobile
+#--------------------------------------------------------------------------------------------
+
+# Reduce these values for better performance on mobile devices:
+# - ORBextractor.nFeatures: 500-800 (instead of 1000)
+# - ORBextractor.nLevels: 6 (instead of 8)
+# - Camera.fps: 15-20 (instead of 30)
+
+# Example optimized settings for mobile:
+# ORBextractor.nFeatures: 600
+# ORBextractor.nLevels: 6
+# Camera.fps: 15.0
